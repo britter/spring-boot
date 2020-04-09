@@ -8,6 +8,16 @@ pluginManagement {
 		if (version.endsWith('BUILD-SNAPSHOT')) {
 			maven { url "https://repo.spring.io/snapshot" }
 		}
+		maven {
+			url = uri("https://repo.gradle.org/gradle/enterprise-libs-snapshots-local")
+			credentials {
+				username = settings['enterprise.snapshots.username']
+				password = settings['enterprise.snapshots.password']
+			}
+			authentication {
+				basic(BasicAuthentication)
+			}
+		}
 	}
 	resolutionStrategy {
 		eachPlugin {
@@ -19,11 +29,21 @@ pluginManagement {
 			}
 		}
 	}
+	plugins {
+		id("com.gradle.enterprise.test-distribution") version "1.0-20200409123415-master"
+	}
 }
 
 plugins {
 	id "com.gradle.enterprise" version "3.2"
 	id "io.spring.gradle-enterprise-conventions" version "0.0.2"
+}
+
+gradleEnterprise {
+	buildScan {
+		server = "https://ge-experiment.grdev.net"
+		publishAlways()
+	}
 }
 
 rootProject.name="spring-boot-build"

@@ -1,5 +1,6 @@
 plugins {
 	id "org.jetbrains.kotlin.jvm" apply false // https://youtrack.jetbrains.com/issue/KT-30276
+	id "com.gradle.enterprise.test-distribution" apply false
 }
 
 description = "Spring Boot Build"
@@ -19,5 +20,16 @@ allprojects {
 
 	configurations.all {
 		resolutionStrategy.cacheChangingModulesFor 60, "minutes"
+	}
+}
+
+configure(subprojects.findAll { !it.name.contains('-starter') }) {
+	apply plugin: "com.gradle.enterprise.test-distribution"
+
+	tasks.withType(Test).configureEach {
+		distribution {
+			enabled = true
+			maxLocalExecutors = 0
+		}
 	}
 }
