@@ -25,3 +25,7 @@ dependencies {
 	testImplementation("org.projectlombok:lombok")
 	testImplementation("org.springframework:spring-core")
 }
+
+test {
+	inputs.dir "src/test/java/org/springframework/boot/configurationsample"
+}
