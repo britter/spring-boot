@@ -63,3 +63,7 @@ processResources {
 	dependsOn reproducibleLoaderJar
 	dependsOn reproducibleJarModeLayerToolsJar
 }
+
+test {
+	inputs.file "src/test/resources/example.script"
+}
