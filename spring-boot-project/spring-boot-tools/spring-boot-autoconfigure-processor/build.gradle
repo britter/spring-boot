@@ -13,3 +13,7 @@ dependencies {
 	testImplementation("org.springframework:spring-core")
 	testImplementation("org.junit.jupiter:junit-jupiter")
 }
+
+test {
+	inputs.dir "src/test/java/org/springframework/boot/autoconfigureprocessor"
+}
