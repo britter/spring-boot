@@ -56,3 +56,6 @@ dependencies {
 	testRuntimeOnly("org.junit.vintage:junit-vintage-engine")
 }
 
+test {
+	inputs.dir "src/test/webapp"
+}
