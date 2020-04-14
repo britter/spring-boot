@@ -86,3 +86,7 @@ task copyIntTestDependencies(type: Copy) {
 intTest {
 	dependsOn copyIntTestDependencies
 }
+
+test {
+	inputs.dir "src/test/resources/user-home"
+}
