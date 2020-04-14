@@ -92,6 +92,8 @@ compileTestJava {
 
 test {
 	include "**/*Tests.class"
+	inputs.dir "src/main/webapp"
+	inputs.dir "src/test/webapp"
 }
 
 task testSliceMetadata(type: org.springframework.boot.build.test.autoconfigure.TestSliceMetadata) {
