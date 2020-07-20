@@ -188,3 +188,7 @@ dependencies {
 	testRuntimeOnly("org.jetbrains.kotlin:kotlin-reflect")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
+
+test {
+	inputs.dir "src/test/resources/db/migration"
+}
