@@ -16,6 +16,7 @@
 
 package org.springframework.boot.context.embedded;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.condition.DisabledOnOs;
 import org.junit.jupiter.api.condition.OS;
@@ -34,6 +35,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 @EmbeddedServletContainerTest(packaging = "jar",
 		launchers = { PackagedApplicationLauncher.class, ExplodedApplicationLauncher.class })
+@Disabled("Does not work with test distribution")
 class EmbeddedServletContainerJarPackagingIntegrationTests {
 
 	@TestTemplate

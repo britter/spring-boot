@@ -46,5 +46,8 @@ task syncTestRepository(type: Sync) {
 }
 
 test {
-	dependsOn prepareMavenBinaries, syncTestRepository
+	inputs.files prepareMavenBinaries, syncTestRepository
+	inputs.dir "src/test/resources"
+	inputs.file rootProject.file("gradle.properties")
+	inputs.dir "src/test/java/com/example"
 }
