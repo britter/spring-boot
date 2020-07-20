@@ -60,6 +60,7 @@ task test(type: Test) {
 	dependsOn antRun
 	testClassesDirs = sourceSets.test.output.classesDirs
 	classpath = sourceSets.test.runtimeClasspath
+	inputs.dir "$buildDir/ant/libs"
 }
 
 check {
