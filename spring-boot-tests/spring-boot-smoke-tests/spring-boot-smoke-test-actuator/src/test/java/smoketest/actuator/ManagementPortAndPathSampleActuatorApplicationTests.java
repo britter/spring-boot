@@ -18,6 +18,7 @@ package smoketest.actuator;
 
 import java.util.Map;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,6 +68,7 @@ class ManagementPortAndPathSampleActuatorApplicationTests {
 	}
 
 	@Test
+	@Disabled("Does not work with test distribution")
 	void testHealth() {
 		ResponseEntity<String> entity = new TestRestTemplate().withBasicAuth("user", "password")
 				.getForEntity("http://localhost:" + this.managementPort + "/admin/health", String.class);
