@@ -23,3 +23,7 @@ dependencies {
 	testImplementation(project(":spring-boot-project:spring-boot-starters:spring-boot-starter-test"))
 	testImplementation(project(":spring-boot-project:spring-boot-starters:spring-boot-starter-jetty"))
 }
+
+test {
+	inputs.dir "src/main/webapp"
+}
