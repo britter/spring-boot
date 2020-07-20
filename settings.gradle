@@ -8,6 +8,7 @@ pluginManagement {
 		if (version.endsWith('BUILD-SNAPSHOT')) {
 			maven { url "https://repo.spring.io/snapshot" }
 		}
+		maven { url 'https://repo.gradle.org/gradle/enterprise-libs-release-candidates-local/' }
 		maven {
 			url = uri("https://repo.gradle.org/gradle/enterprise-libs-snapshots-local")
 			credentials {
@@ -30,7 +31,7 @@ pluginManagement {
 		}
 	}
 	plugins {
-		id("com.gradle.enterprise.test-distribution") version "1.0-20200409123415-master"
+		id("com.gradle.enterprise.test-distribution") version "1.1-rc-2"
 	}
 }
 
