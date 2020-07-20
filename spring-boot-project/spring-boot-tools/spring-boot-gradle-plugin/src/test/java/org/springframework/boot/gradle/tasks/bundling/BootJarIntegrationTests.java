@@ -41,6 +41,7 @@ import org.gradle.testkit.runner.BuildResult;
 import org.gradle.testkit.runner.InvalidRunnerConfigurationException;
 import org.gradle.testkit.runner.TaskOutcome;
 import org.gradle.testkit.runner.UnexpectedBuildFailure;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.TestTemplate;
 
 import org.springframework.boot.loader.tools.JarModeLibrary;
@@ -54,6 +55,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @author Andy Wilkinson
  * @author Madhura Bhave
  */
+@Disabled("Does not work with test distribution")
 class BootJarIntegrationTests extends AbstractBootArchiveIntegrationTests {
 
 	BootJarIntegrationTests() {
