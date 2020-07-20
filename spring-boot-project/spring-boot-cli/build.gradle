@@ -97,7 +97,9 @@ sourceSets {
 }
 
 test {
-	dependsOn syncTestRepository
+	inputs.files syncTestRepository
+	inputs.dir "src/test/resources"
+	inputs.dir "samples"
 }
 
 task fullJar(type: Jar) {
