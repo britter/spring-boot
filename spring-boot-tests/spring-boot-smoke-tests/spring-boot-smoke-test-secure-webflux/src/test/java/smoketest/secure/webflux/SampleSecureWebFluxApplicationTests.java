@@ -18,6 +18,7 @@ package smoketest.secure.webflux;
 
 import java.util.Base64;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,6 +69,7 @@ class SampleSecureWebFluxApplicationTests {
 	}
 
 	@Test
+	@Disabled("Does not work with test distribution")
 	void actuatorsAccessibleOnLogin() {
 		this.webClient.get().uri("/actuator/health").accept(MediaType.APPLICATION_JSON)
 				.header("Authorization", getBasicAuth()).exchange().expectBody(String.class)
