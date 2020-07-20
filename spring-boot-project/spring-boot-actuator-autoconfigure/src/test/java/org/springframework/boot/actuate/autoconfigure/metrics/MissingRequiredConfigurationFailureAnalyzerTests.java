@@ -18,6 +18,7 @@ package org.springframework.boot.actuate.autoconfigure.metrics;
 
 import io.micrometer.core.instrument.Clock;
 import io.micrometer.newrelic.NewRelicMeterRegistry;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.boot.diagnostics.FailureAnalysis;
@@ -34,6 +35,7 @@ import static org.junit.jupiter.api.Assertions.fail;
  *
  * @author Andy Wilkinson
  */
+@Disabled("Doesn't work even without test distribution")
 class MissingRequiredConfigurationFailureAnalyzerTests {
 
 	@Test

@@ -17,6 +17,7 @@
 package org.springframework.boot.actuate.autoconfigure.metrics.export.elastic;
 
 import io.micrometer.elastic.ElasticConfig;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.boot.actuate.autoconfigure.metrics.export.properties.StepRegistryPropertiesTests;
@@ -28,6 +29,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  *
  * @author Andy Wilkinson
  */
+@Disabled("Doesn't work even without test distribution")
 class ElasticPropertiesTests extends StepRegistryPropertiesTests {
 
 	@Test

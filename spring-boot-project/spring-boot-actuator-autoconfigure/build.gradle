@@ -155,6 +155,7 @@ compileTestJava {
 }
 
 test {
+	inputs.dir "src/test/resources/org/springframework/boot/actuate/autoconfigure/endpoint/web/documentation/"
 	outputs.dir("${buildDir}/generated-snippets")
 }
 
