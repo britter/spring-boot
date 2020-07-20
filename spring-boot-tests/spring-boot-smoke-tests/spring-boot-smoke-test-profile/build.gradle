@@ -10,3 +10,7 @@ dependencies {
 
 	testImplementation(project(":spring-boot-project:spring-boot-starters:spring-boot-starter-test"))
 }
+
+test {
+	inputs.file "application.yml"
+}
