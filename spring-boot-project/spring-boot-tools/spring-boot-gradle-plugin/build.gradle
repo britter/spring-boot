@@ -118,4 +118,8 @@ test {
 	inputs.dir "src/test/java/com/example"
 	inputs.dir "src/docs/gradle"
 	inputs.file "build.gradle"
+	distribution {
+		maxRemoteExecutors = 4
+		maxLocalExecutors = 0
+	}
 }
