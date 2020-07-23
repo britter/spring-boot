@@ -23,7 +23,14 @@ pluginManagement {
 
 plugins {
 	id "com.gradle.enterprise" version "3.2"
-	id "io.spring.gradle-enterprise-conventions" version "0.0.2"
+//	id "io.spring.gradle-enterprise-conventions" version "0.0.2"
+}
+
+gradleEnterprise {
+	buildScan {
+		server = "http://localhost:9080"
+		publishAlways()
+	}
 }
 
 rootProject.name="spring-boot-build"
